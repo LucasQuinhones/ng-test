@@ -15,7 +15,7 @@ export class UniqueIdService {
     return `${prefix}-${uniqueId}`;
   }
 
-  public getNumberOfGeneratedIds(): number {
+  public getNumberOfGeneratedUniqueIds(): number {
     return this.numberOfGeneratedIds;
   }
 

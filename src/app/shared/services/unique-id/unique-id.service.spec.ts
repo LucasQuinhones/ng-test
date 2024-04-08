@@ -8,7 +8,7 @@ describe(UniqueIdService.name, () => {
   });
 
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} should not generate duplicate IDs when called multiple times`, () => {
-    const service = new UniqueIdService()
+    const service = new UniqueIdService();
     const ids = new Set();
 
     for (let i = 0; i < 50; i++) {
@@ -17,4 +17,13 @@ describe(UniqueIdService.name, () => {
 
     expect(ids.size).toBe(50);
   });
+
+  it(`#${UniqueIdService.prototype.getNumberOfGeneratedUniqueIds.name} should return the number of generatedIds when called `, () => {
+    const service = new UniqueIdService();
+
+    service.generateUniqueIdWithPrefix('app');
+    service.generateUniqueIdWithPrefix('app');
+
+    expect(service.getNumberOfGeneratedUniqueIds()).toBe(2);
+  })
 })
