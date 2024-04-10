@@ -40,3 +40,9 @@ describe(UniqueIdService.name, () => {
       })
     });
 });
+
+/*
+  expect(true).toBeTrue(); - Literal
+  expect(true).toBe(true); - Both parameters are the same
+  expect(true).toBeTruthy(); - Generic
+*/
